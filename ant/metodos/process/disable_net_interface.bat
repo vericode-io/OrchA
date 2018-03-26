@@ -1,0 +1,1 @@
+..\tools\PSEXEC_Tools\PsExec.exe -h -realtime \\%1 cmd /c netsh interface set interface name="%2" admin=disabled

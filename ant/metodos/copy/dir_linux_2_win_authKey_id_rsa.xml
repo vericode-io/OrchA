@@ -1,0 +1,13 @@
+<project name="dir.linux.2.win.authKey.id.rsa" default="dir.linux.2.win.authKey.id.rsa" basedir=".">
+
+	<target name="dir.linux.2.win.authKey.id.rsa">
+	
+		<mkdir dir="${var5}"/>
+		
+		<scp file="${var6}@${var1}:${var3}${var4}" 
+			 trust="true"
+			 keyfile="${user.home}\.ssh\id_rsa"
+			 todir="${var5}"
+		/>
+	</target>
+</project>

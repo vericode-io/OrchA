@@ -1,0 +1,1 @@
+logman -s %1 delete %2

@@ -1,0 +1,19 @@
+<project name="9.args_local" default="9.args_local" basedir=".">
+	
+	<target name="9.args_local">
+	
+		<exec executable="${basedir}\metodos\exec\9_args_local.bat">
+		<arg value="${var3}"/>
+		<arg value="${var4}"/>
+		<arg value="${var5}"/>
+		<arg value="${var6}"/>
+		<arg value="${var7}"/>
+		<arg value="${var8}"/>
+		<arg value="${var9}"/>
+		<arg value="${var10}"/>
+		<arg value="${var11}"/>
+		</exec>
+	
+	</target>
+		
+</project>

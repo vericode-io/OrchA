@@ -1,0 +1,20 @@
+<project name="oracle" default="oracle" basedir=".">
+
+	<target name="oracle">	
+	
+		<mkdir dir="${basedir}\output\queries\oracle\"/>
+		
+		<sql driver="oracle.jdbc.OracleDriver"
+		url="jdbc:oracle:thin:@${var1}:${var3}:${var4}" 
+		userid="${var5}"
+		password="${var6}"
+		print="TRUE"
+		delimitertype="row"
+		delimiter="//"		
+		output="${basedir}\output\queries\oracle\${timestamp}_${var7}.csv"
+		src="${var8}\${var9}">
+			
+			<!-- Pulo do gato é o delimiterType e delimiter	-->
+		</sql>
+	</target>
+</project>

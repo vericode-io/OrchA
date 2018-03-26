@@ -1,0 +1,32 @@
+<project name="write.timestamp" default="write.timestamp" basedir=".">
+
+	<target name="write.timestamp">
+
+		<sequential>
+			<var name="current.time" unset="true"/>
+
+			<tstamp>
+				<format property="current.time" pattern="yyyy-MM-dd HH:mm:ss" />
+			</tstamp>
+			
+			<if>
+				<equals arg1="${var5}" arg2="append_in_line"/>
+				<then>
+				
+					<echo file="${var3}\${var4}" message="${var6};${current.time}," append="true"/>
+					
+				</then>
+				
+				<else>
+				
+					<echo file="${var3}\${var4}" message="${current.time}${line.separator}" append="true"/>
+				
+				</else>
+			
+			</if>
+		
+		</sequential> 
+
+	</target>
+	
+</project>

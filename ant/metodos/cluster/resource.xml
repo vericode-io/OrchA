@@ -1,0 +1,13 @@
+<project name="cluster.resource" default="cluster.resource" basedir=".">
+
+	<target name="cluster.resource">
+
+		<exec executable="${basedir}\metodos\cluster\resource.bat">
+		<arg value="${var1}"/>
+		<arg value="${var3}"/>
+		<arg value="${var4}"/>
+		</exec>
+
+	</target>
+	
+</project>

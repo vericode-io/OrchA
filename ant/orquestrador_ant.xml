@@ -1,0 +1,157 @@
+﻿<!--
+   Copyright 2015 Prime Up Soluções em TI LTDA
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<project name="orquestrador" default="orquestrador" basedir=".">
+
+    <echo message="basedir = '${basedir}'"/>
+
+	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
+
+	<target name="declare.variables">
+
+		<!-- Configuracoes do Gerais -->
+		<!-- <property name="user" value=""/>  --> 
+		<!-- gambi setar aqui um pass traço (-) so pra passar o numero correto de parametros pro java executar autenticacao por usuario/senha (envi)
+		      para voltar a usar autenticaca por preshared-keys basta deixar esta variavel vazia
+			  arrumar isso um dia de tempo (nunca...)  - Thiago Ruiz -->
+		<property name="password" value=""/>
+
+		<!-- Funcoes padores-->		
+		<tstamp>
+			<format property="timestamp" pattern="yyyy-MM-dd_HH-mm-ss"/>
+		</tstamp>
+
+		<property name="build.log.dir" location="${basedir}/output/ant/logs"/>
+		<mkdir dir="${build.log.dir}"/>
+		<property name="build.log.filename" value="verbose_${timestamp}.log"/>
+		<record name="${build.log.dir}/${build.log.filename}" loglevel="verbose" append="false"/>
+		<echo message="Build logged to ${build.log.filename}"/>
+		<property environment="env" />
+	</target>
+
+	<!-- Inicia ant -->
+	<target name="orquestrador" depends="declare.variables">		
+
+		<mkdir dir="${basedir}\output\ant\logs\shell\"/>
+		<loadfile property="file.servers" srcFile="${jobs}"/>
+		<!--<property name="test.case" value="1"/>-->
+		<!--<property name="exec" value="1"/>-->
+
+		<for param="line" list="${file.servers}" delimiter="${line.separator}">
+			<sequential>
+
+				<var name="i" value="1"/>
+
+				<for param="i" list="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23">
+					<sequential>
+						<var name="var${i}" value="" />
+						<math result="i" operand1="${i}" operation="+" operand2="1" datatype="int" />
+					</sequential>
+				</for>	
+
+				<var name="i" value="1"/>
+
+				<for param="atribute" list="@{line}" delimiter=",">
+					<sequential>
+						<var name="var${i}" value="@{atribute}" />
+						<math result="i" operand1="${i}" operation="+" operand2="1" datatype="int" />
+					</sequential>
+				</for>		
+
+				<if>
+					<matches string="@{line}" pattern="^#"/>
+					<then>
+
+					</then>
+					<elseif>
+						<matches string="@{line}" pattern="^--"/>
+						<then>
+
+							<propertyregex property="test.case"
+							override="true"
+				            input="@{line}"
+				            regexp="--([^\.]*)"
+				            select="\1"/>
+
+						</then>
+					</elseif>
+
+					<elseif>
+						<matches string="@{line}" pattern="^-"/>
+						<then>
+
+							<propertyregex property="exec"
+							override="true"
+				            input="@{line}"
+				            regexp="-([^\.]*)"
+				            select="\1"/>
+
+						</then>
+					</elseif>
+
+					<elseif>
+						<matches string="@{line}" pattern="^@"/>
+						<then>						
+							<propertyregex property="var.name"
+							override="true"
+				            input="@{line}"
+				            regexp="@([^\.]*)\=([^\.]*)"
+				            select="\1"/>
+
+							<propertyregex property="var.value"
+							override="true"
+				            input="@{line}"
+				            regexp="@([^\.]*)\=([^\.]*)"
+				            select="\2"/>
+
+							<property name="${var.name}" value="${var.value}"/>
+							<echo message="Variable @${var.name} set to '${var.value}'"/>
+						</then>
+					</elseif>
+					<elseif>
+						<contains string="${var2}" substring=".txt" />
+						<then>
+
+							<!-- com a linha abaixo absolutamente NADA eh printado,
+							     tornando um pouco mais 'security-friendly' pois não gera logs de users/pass
+							-->
+							<!-- <exec executable="${basedir}\metodos\linux\ssh\use_jar.bat" outputproperty="devnull" >  -->
+
+							<exec executable="${basedir}\metodos\linux\ssh\use_jar.bat" >
+								<arg value="${basedir}\metodos\linux\ssh\ssh.jar"/>
+								<arg value="${var1}"/>
+								<arg value="${var3}"/>
+								<arg value="${password}"/>
+								<arg value="${basedir}\${var2}"/>
+							</exec>
+						</then>
+					</elseif>
+
+					<elseif>
+						<contains string="${var2}" substring=".xml" />
+						<then>	
+							<ant antfile="${basedir}\metodos\${var2}"/>
+						</then>
+
+					</elseif>
+
+				</if>
+
+			</sequential>
+		</for>		
+
+	</target>
+
+</project>

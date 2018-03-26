@@ -1,0 +1,12 @@
+\System\*
+\LogicalDisk(*)\*
+\Memory\*
+\Network Interface(*)\*
+\PhysicalDisk(*)\*
+\Process(_Total)\*
+\Process(sqlbrowser)\*
+\Process(SqlWb)\*
+\Process(SqlWb#1)\*
+\Process(SqlWb#2)\*
+\Process(sqlwriter)\*
+\Processor(*)\*

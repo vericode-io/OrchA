@@ -1,0 +1,10 @@
+<project name="misc.test.case" default="misc.test.case" basedir=".">
+
+	<target name="misc.test.case">
+			
+		<var name="test.case" value="${var3}"/>	
+		<echo> ${test.case} </echo>
+		
+	</target>
+	
+</project>

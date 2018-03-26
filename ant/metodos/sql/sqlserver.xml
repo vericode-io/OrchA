@@ -1,0 +1,18 @@
+<project name="sql.sqlserver" default="sql.sqlserver" basedir=".">
+
+	<target name="sql.sqlserver">	
+	
+		<mkdir dir="${var6}"/>
+		
+		<!--Windows Autentication-->
+		<sql driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+	        url="jdbc:sqlserver://${var1}:${var3};integratedSecurity=true"
+	        userid=""
+	        password=""
+	        print="TRUE" 
+	        output="${var6}\${var7}"
+			src="${var4}\${var5}"/>	
+			
+	</target>
+  
+</project>

@@ -1,0 +1,14 @@
+<project name="file_win_2_linux_auth_env" default="file_win_2_linux_auth_env" basedir=".">
+
+	<target name="file_win_2_linux_auth_env">
+	
+	<scp file="${var3}"
+		 todir="${env.UA}@${var1}:${var4}"
+		 password="${env.PA}"
+		 trust="true"
+		 sftp="true"
+ 	/>
+		
+	</target>
+	
+</project>

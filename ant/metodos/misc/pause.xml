@@ -1,0 +1,8 @@
+<project basedir="." default="pause" name="pause">
+	<target name="pause">
+	
+		<input message="Press Return key to continue..."/>
+		
+	</target>
+	
+</project>

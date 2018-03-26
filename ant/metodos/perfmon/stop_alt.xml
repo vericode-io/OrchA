@@ -1,0 +1,26 @@
+<project name="perfmon.stop" default="perfmon.stop" basedir=".">
+	
+	<target name="perfmon.stop">
+
+		<!-- Para o Perfmon importado. -->
+		<exec executable="${basedir}\metodos\perfmon\stop.bat">
+		<arg value="${var1}"/>
+		<arg value="${var3}"/>				
+		</exec> 
+		
+		<mkdir dir="${basedir}\metodos\perfmon\alphaPerfmon\Files_csv\"/>
+		
+		<copy todir="${basedir}\metodos\perfmon\alphaPerfmon\Files_csv\" flatten="true">
+			<last count="${var4}">
+			  <sort>
+				<date xmlns="antlib:org.apache.tools.ant.types.resources.comparators"/>
+				<resources>
+				  <fileset dir="\\${var1}\c$\robo_perfmon\"/>				 
+				</resources>
+			  </sort>
+			</last>
+		</copy>
+
+	</target>
+		
+</project>

@@ -1,0 +1,12 @@
+<project name="process.disable_net_interface" default="process.disable_net_interface" basedir=".">
+	
+	<target name="process.disable_net_interface">
+	
+		<exec executable="${basedir}\metodos\process\disable_net_interface.bat" failifexecutionfails="false">
+		<arg value="${var1}"/>
+		<arg value="${var3}"/>
+		</exec>
+	
+	</target>
+		
+</project>

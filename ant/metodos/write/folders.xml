@@ -1,0 +1,86 @@
+<project name="write.folders" default="write.folders" basedir=".">
+
+	<target name="write.folders">
+
+		<sequential>
+		
+		<mkdir dir="${var3}"/>
+			
+			<if>
+				<equals arg1="${var4}" arg2=""/>
+				<then>
+									
+				</then>
+				
+				<else>
+
+					<mkdir dir="${var3}\${var4}"/>
+					
+					<if>
+						<equals arg1="${var5}" arg2=""/>
+						<then>
+											
+						</then>
+						
+						<else>
+
+							<mkdir dir="${var3}\${var4}\${var5}"/>
+
+							<if>
+									<equals arg1="${var6}" arg2=""/>
+									<then>
+														
+									</then>
+									
+									<else>
+
+										<mkdir dir="${var3}\${var4}\${var5}\${var6}"/>
+										
+										<if>
+											<equals arg1="${var7}" arg2=""/>
+											<then>
+																
+											</then>
+											
+											<else>
+
+												<mkdir dir="${var3}\${var4}\${var5}\${var6}\${var7}"/>
+												
+												<if>
+													<equals arg1="${var8}" arg2=""/>
+													<then>
+																		
+													</then>
+													
+													<else>
+
+														<mkdir dir="${var3}\${var4}\${var5}\${var6}\${var7}\${var8}"/>
+													
+													</else>
+												
+												</if>
+
+											
+											</else>
+										
+										</if>
+									
+									</else>
+								
+								</if>
+											
+	
+						</else>
+					
+					</if>
+				
+				
+				</else>
+			
+			</if>
+
+		</sequential> 
+
+	</target>
+	
+</project>

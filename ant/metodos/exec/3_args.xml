@@ -1,0 +1,16 @@
+<project name="3.args" default="3.args" basedir=".">
+	
+	<target name="3.args">
+	
+		<exec executable="${basedir}\metodos\exec\3_args.bat">
+		<arg value="${var3}"/>
+		<arg value="${var1}"/>
+		<arg value="${var4}"/>
+		<arg value="${var5}"/>
+		<arg value="${var6}"/>
+		<arg value="${var7}"/>
+		</exec>
+	
+	</target>
+		
+</project>

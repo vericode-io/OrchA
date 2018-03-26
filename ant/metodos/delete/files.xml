@@ -1,0 +1,17 @@
+<project name="delete.files" default="delete.files" basedir=".">
+
+	<target name="delete.files">
+	
+		<delete>
+		
+			<fileset dir = "${var3}">
+			
+				<include name = "${var4}"/>
+			
+			</fileset>
+		
+		</delete>
+		
+	</target>
+	
+</project>

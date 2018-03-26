@@ -1,0 +1,9 @@
+<project name="perfmon.start.alphaPermon" default="perfmon.start.alphaPermon" basedir=".">
+
+	<target name="perfmon.start.alphaPermon">
+	
+		<exec executable="${basedir}\metodos\perfmon\alphaPerfmon\run.bat"/>
+	
+	</target>
+	
+</project>

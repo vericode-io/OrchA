@@ -1,0 +1,9 @@
+<project name="file.win.2.linux" default="file.win.2.linux" basedir=".">
+
+	<target name="file.win.2.linux">
+	
+		<scp file="${var3}" todir="${user}:${password}@${var1}:${var4}" trust="true"/>
+		
+	</target>
+	
+</project>

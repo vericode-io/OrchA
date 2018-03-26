@@ -1,0 +1,54 @@
+<project name="waitfor.process" default="waitfor.process" basedir=".">
+
+	<target name="waitfor.process">
+			
+		<trycatch>	
+			<try>
+				<for list="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30" param="aux">
+					<sequential>
+		
+						<exec executable="${basedir}\metodos\waitfor\process.bat">
+						<arg value="${var3}"/>
+						<arg value="${var1}"/>
+						</exec>		
+						
+						<!--<loadfile property="seed" srcFile="${basedir}\metodos\waitfor\seed.txt"/>-->
+						<!--
+						<loadresource property="seed">
+							<file file="${basedir}\metodos\waitfor\seed.txt"/>
+						</loadresource>
+						-->
+						<!--<echo>${seed}</echo>-->
+						
+						<if>
+						<!--<equals arg1="${seed}" arg2="${var4}"/>-->
+						<resourcecontains resource="${basedir}\metodos\waitfor\seed.txt" substring="a${var4}${line.separator}" />
+						
+							<then>
+								<property name="myBreakProperty" value="nevermind the value"/>
+							</then>
+						
+						</if>
+						
+						<fail if="myBreakProperty"/>
+						
+						<echo>Processo ${var3} ainda esta no ar... </echo>
+						
+						<sleep seconds="${var5}"/>
+						
+					</sequential>
+				</for>
+			
+			</try>
+			
+			<catch>
+			
+				<echo> Processo ${var3} foi morto! </echo>
+			
+			</catch>
+			
+		</trycatch>	
+			
+	</target>
+	
+</project>

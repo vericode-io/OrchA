@@ -1,0 +1,9 @@
+<project name="move.dir.win.2.win" default="move.dir.win.2.win" basedir=".">
+	<target name="move.dir.win.2.win">
+		<move todir="${var5}">
+			<fileset dir="${var3}">
+				<include name="${var4}"/>
+			</fileset>
+		</move>
+	</target>
+</project>

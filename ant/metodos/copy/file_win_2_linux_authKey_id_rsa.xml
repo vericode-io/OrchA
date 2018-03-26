@@ -1,0 +1,14 @@
+<project name="file.win.2.linux.authKey.id.rsa" default="file.win.2.linux.authKey.id.rsa" basedir=".">
+
+	<target name="file.win.2.linux.authKey.id.rsa">
+	
+	<scp file="${var3}"
+		 todir="${var5}@${var1}:${var4}"
+		 trust="true"
+		 keyfile="${user.home}\.ssh\id_rsa"
+		 sftp="true"
+ 	/>
+		
+	</target>
+	
+</project>

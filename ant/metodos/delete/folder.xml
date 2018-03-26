@@ -1,0 +1,9 @@
+<project name="delete.folder" default="delete.folder" basedir=".">
+
+	<target name="delete.folder">
+	
+		<delete dir="${var3}" includeemptydirs="true"/>
+
+	</target>
+	
+</project>

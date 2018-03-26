@@ -1,0 +1,17 @@
+<project name="dir.win.2.win" default="dir.win.2.win" basedir=".">
+
+	<target name="dir.win.2.win">
+	
+		<mkdir dir="${var4}"/>
+		
+		<copy todir="${var4}">
+		
+			<fileset dir="${var3}">
+				<include name="*.*"/>
+			</fileset>
+			
+		</copy>
+		
+	</target>
+	
+</project>

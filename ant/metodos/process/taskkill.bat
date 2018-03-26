@@ -1,0 +1,1 @@
+..\tools\PSEXEC_Tools\PsExec.exe -h -realtime \\%1 cmd /c taskkill /F /IM %2

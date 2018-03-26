@@ -1,0 +1,1 @@
+cluster /cluster:%1 resource %2 /%3

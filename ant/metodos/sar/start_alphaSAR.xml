@@ -1,0 +1,11 @@
+<project name="start.alphaSAR" default="start.alphaSAR" basedir=".">
+
+	<target name="start.alphaSAR">
+	
+		<exec executable="${basedir}\metodos\sar\alphaSAR\run.bat">
+			<arg value="${var3}"/>
+		</exec>
+	
+	</target>
+	
+</project>

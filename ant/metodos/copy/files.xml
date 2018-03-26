@@ -1,0 +1,10 @@
+<project name="copy.files" default="copy.files" basedir=".">
+	<target name="copy.files">
+		<mkdir dir="${var5}"/>
+		<copy todir="${var5}">
+			<fileset dir="${var3}">
+				<include name="**/${var4}"/>
+			</fileset>
+		</copy>
+	</target>
+</project>

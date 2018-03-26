@@ -1,0 +1,36 @@
+<project name="perfmon.start.alphaPerfmon.template" default="perfmon.start.alphaPerfmon.template" basedir=".">
+
+	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
+	
+	<target name="perfmon.start.alphaPerfmon.template">
+	
+		<tstamp>
+			<format property="time.now" pattern="HH:mm:ss" unit="hour"/>
+		</tstamp>
+		
+		<mkdir dir="${basedir}\metodos\perfmon\alphaPerfmon\"/>
+	
+		<!-- Cria o arquivo R com o horario do inicio do teste. -->
+		<propertyfile 		
+			file="${basedir}\metodos\perfmon\alphaPerfmon\Config.cfg">
+			<entry  key="Diretorio" value="${basedir}\metodos\perfmon\alphaPerfmon\Files_csv\"/>
+			<entry  key="ProjectName" value="${var3}"/>
+			<entry  key="sampleGroup" value="${var4}"/>
+			<entry  key="PlotTestHour" value="${var5}"/>
+			<entry  key="hourBegin" value="${time.now}"/>		
+			<entry  key="hourEnd" value=""/>			
+		</propertyfile>
+		
+		<replace file="${basedir}\metodos\perfmon\alphaPerfmon\Config.cfg">
+		
+			<replacefilter token="\\" value="\"/>
+			<replacefilter token="\:\" value=":/"/>
+			<replacefilter token="\:" value=":"/>
+			<replacefilter token="\" value="/"/>
+
+		</replace>
+	
+	</target>
+		
+</project>
+	

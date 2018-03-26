@@ -1,0 +1,9 @@
+<project name="zip.zip" default="zip.zip" basedir=".">
+	<target name="zip.zip">
+		<zip zip64mode="always" destfile="${var3}\${timestamp}_${var5}.zip" >
+			<FileSet dir="${var3}">
+				<include name="${var4}"/>
+			</FileSet>
+		</zip>
+	</target>
+</project>

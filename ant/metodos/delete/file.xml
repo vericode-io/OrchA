@@ -1,0 +1,9 @@
+<project name="delete.file" default="delete.file" basedir=".">
+
+	<target name="delete.file">
+	
+		<delete file="${var3}"/>
+		
+	</target>
+	
+</project>

@@ -1,0 +1,27 @@
+<project name="write.message" default="write.message" basedir=".">
+
+	<target name="write.message">
+
+		<sequential>
+			
+			<if>
+				<equals arg1="${var5}" arg2="append_in_line"/>
+				<then>
+				
+					<echo file="${var3}\${var4}" message="${var6}," append="true"/>
+					
+				</then>
+				
+				<else>
+				
+					<echo file="${var3}\${var4}" message="${var6}${line.separator}" append="true"/>
+				
+				</else>
+			
+			</if>
+
+		</sequential> 
+
+	</target>
+	
+</project>

@@ -1,0 +1,9 @@
+<project name="misc.echo" default="misc.echo" basedir=".">
+
+	<target name="misc.echo">
+			
+		<echo> ${var3} </echo>
+		
+	</target>
+	
+</project>

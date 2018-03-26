@@ -1,0 +1,74 @@
+<project name="OrchASsh" default="dist" basedir=".">
+
+	<!-- global properties -->
+	<property name="project.name" value="OrchASsh"/>
+	<property name="project.version" value="0.0.1"/>
+	<property name="main_class_name" value="br.com.primeup.java.ssh.ExecuteShell"/>
+	<property name="jarname"  value="ssh.jar"/>
+
+	<!-- set directories -->
+	<property name="src" location="src"/>
+	<property name="bin" location="bin"/>
+	<property name="lib"  location="libs"/>
+
+	<path id="project.classpath">
+		<pathelement location="${bin}" />
+		<pathelement location="${lib}" />
+	</path>
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp/>
+		<!-- Create directories if needed -->
+		<mkdir dir="${src}"/>
+		<mkdir dir="${bin}"/>
+	</target>
+
+	<target name="compile" depends="init" description="compile the source " >
+
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac debug="true"
+			srcdir="${src}"
+			destdir="${bin}"
+			classpathref="project.classpath"
+			includeantruntime="false" />
+
+		<!-- Copy files from ${src} into ${build} -->
+		<copy todir="${bin}">
+			<fileset dir="${src}">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="dist" depends="compile" description="generate the distribution" >
+
+		<!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+		<jar jarfile="./${jarname}" basedir="${bin}">
+			<manifest>
+				<attribute name="Main-Class" value="${main_class_name}"/>
+				<attribute name="Class-Path" value="./ganymed-ssh2-build210.jar"/>
+			</manifest>
+		</jar>
+		
+		<delete file="${project.name}.${project.version}.zip" />
+		
+		<!-- 
+		<zip  destfile="${project.name}.${project.version}.zip"
+		        compress="true" 
+		  >
+		    <zipfileset dir="${basedir}" includes="cfg/*,lib/*,run.bat,run.sh,${jarname}" prefix="${project.name}"/>
+		</zip>
+		-->
+
+		<!-- <copy file="${project.name}.${project.version}.zip" toDir="/tmp/1/" overwrite="true"/> -->
+		<!-- <copy file="./${jarname}.jar" tofile="/media/user/PENDRIVE/${jarname}.jar" overwrite="true"/> -->
+
+	</target>
+
+
+	<target name="clean" description="clean up" >
+		<!-- Delete the ${build} directory-->
+		<delete dir="${build}"/>
+	</target>
+</project>

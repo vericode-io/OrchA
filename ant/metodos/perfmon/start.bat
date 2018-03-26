@@ -1,0 +1,1 @@
+logman -s %1 start %2

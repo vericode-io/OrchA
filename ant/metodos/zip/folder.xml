@@ -1,0 +1,23 @@
+<project name="zip.folder" default="zip.folder" basedir=".">
+
+	<target name="zip.folder">
+	
+		<if>
+			<equals arg1="${var6}" arg2="timestamp"/>
+			<then>
+			
+				<zip destfile="${var4}\${timestamp}_${var5}.zip" basedir="${var3}" excludes="*.zip"/>
+				
+			</then>
+
+			<else>
+			
+				<zip destfile="${var4}\${var5}.zip" basedir="${var3}" excludes="*.zip"/>
+			
+			</else>
+		
+		</if>
+	
+	</target>
+	
+</project>

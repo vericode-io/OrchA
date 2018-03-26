@@ -1,0 +1,44 @@
+<project name="check.log" default="check.log" basedir=".">
+
+	<target name="check.log">
+	
+		<echo> ${var4} </echo>
+		
+		<condition property="status" value="${var7}" else="${var8}">
+		
+			<resourcecontains resource="${var5}" substring="${var6}" />
+			
+		</condition>
+		
+		<echo> ${status}</echo>
+		
+		<condition property="checker${counter}" value="true" else="false">
+		
+			<resourcecontains resource="${var5}" substring="${var6}" />
+			
+		</condition>
+
+
+		<echo> ${checker1} </echo>
+		<echo> ${checker2} </echo>
+		<echo> ${checker3} </echo>
+		<echo> ${checker4} </echo>
+		<echo> ${counter} </echo>
+
+		
+
+		
+		
+		<!--
+		
+		<waitfor maxwait="${var4}" maxwaitunit="second" checkevery="${var5}">
+		
+			<resourcecontains resource="${var7}" substring="${var8}" />
+			 
+		</waitfor>
+
+		-->
+		
+	</target>
+	
+</project>

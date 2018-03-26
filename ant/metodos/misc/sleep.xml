@@ -1,0 +1,9 @@
+<project name="misc.sleep" default="misc.sleep" basedir=".">
+
+	<target name="misc.sleep">
+			
+		<sleep seconds="${var3}"/>
+		
+	</target>
+	
+</project>

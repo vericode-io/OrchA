@@ -1,0 +1,35 @@
+<project name="perfmon.start" default="perfmon.start" basedir=".">
+	
+	<target name="perfmon.start">
+	
+		<!-- Para o Perfmon importado. -->
+		<exec executable="${basedir}\metodos\perfmon\stop.bat">
+		<arg value="${var1}"/>
+		<arg value="${var5}"/>				
+		</exec> 
+
+		<!-- Deleta o template de Perfmon para o diretorio remoto-->
+		<exec executable="${basedir}\metodos\perfmon\delete.bat">	
+		<arg value="${var1}"/>
+		<arg value="${var5}"/>	
+		</exec> 
+		
+		<!-- Copia o template de Perfmon para o diretorio remoto-->
+		<copy file="${var3}\${var4}" todir="\\${var1}\c$\robo_perfmon"/>
+	
+		<exec executable="${basedir}\metodos\perfmon\import.bat">	
+		<arg value="${var1}"/>
+		<arg value="${var5}"/>
+		<arg value="\\${var1}\c$\robo_perfmon\${var4}"/>		
+		<arg value="C:\robo_perfmon\${var5}_${var1}"/>				
+		</exec>
+		
+		<!-- Inicia o Perfmon importado. -->
+		<exec executable="${basedir}\metodos\perfmon\start.bat">
+		<arg value="${var1}"/>
+		<arg value="${var5}"/>	
+		</exec> 
+		
+	</target>
+		
+</project>

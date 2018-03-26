@@ -1,0 +1,12 @@
+<project name="zip.unzip" default="zip.unzip" basedir=".">
+	<target name="zip.unzip">
+		<unzip dest="${var6}"  overwrite="true"> 
+		    <fileset dir="${var3}">
+				<include name="${var4}"/>
+			</fileset>
+		    <patternset>
+		        <include name="${var5}"/>
+		    </patternset>
+		</unzip>
+	</target>
+</project>

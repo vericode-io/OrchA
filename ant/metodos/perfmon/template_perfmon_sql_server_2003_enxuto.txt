@@ -1,0 +1,20 @@
+\MSSQL$SQLHOSTNAME:Buffer Manager\*
+\MSSQL$SQLHOSTNAME:Databases(*)\*
+\MSSQL$SQLHOSTNAME:General Statistics\*
+\MSSQL$SQLHOSTNAME:Latches\*
+\MSSQL$SQLHOSTNAME:Locks(*)\*
+\MSSQL$SQLHOSTNAME:Memory Manager\*
+\MSSQL$SQLHOSTNAME:SQL Statistics\*
+\MSSQL$SQLHOSTNAME:Wait Statistics(*)\*
+\System\*
+\LogicalDisk(*)\*
+\Memory\*
+\Network Interface(*)\*
+\PhysicalDisk(*)\*
+\Process(_Total)\*
+\Process(sqlbrowser)\*
+\Process(SqlWb)\*
+\Process(SqlWb#1)\*
+\Process(SqlWb#2)\*
+\Process(sqlwriter)\*
+\Processor(*)\*

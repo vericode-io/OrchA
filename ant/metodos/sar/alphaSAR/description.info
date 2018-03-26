@@ -1,0 +1,94 @@
+Contador;Head;Desc
+runq-sz;Queue_LoadAverage;Run queue length (number of tasks waiting for run time).
+plist-sz;Queue_LoadAverage;Number of tasks in the task list.
+ldavg-1;Queue_LoadAverage;System load average for the last minute. The load average is calculated as the average number of runnable or running tasks (R state), and the number of tasks in uninterruptible sleep (D state) over the specified interval.
+ldavg-5;Queue_LoadAverage;System load average for the past 5 minutes.
+ldavg-15;Queue_LoadAverage;System load average for the past 15 minutes.
+kbmemfree;Memory_Utilization;Amount of free memory available in kilobytes.
+kbmemused;Memory_Utilization;Amount of used memory in kilobytes. This does not take into account memory used by the kernel itself.
+%memused;Memory_Utilization;Percentage of used memory.
+kbbuffers;Memory_Utilization;Amount of memory used as buffers by the kernel in kilobytes.
+kbcached;Memory_Utilization;Amount of memory used to cache data by the kernel in kilobytes.
+kbswpfree;Memory_Utilization;Amount of free swap space in kilobytes.
+kbswpused;Memory_Utilization;Amount of used swap space in kilobytes.
+%swpused;Memory_Utilization;Percentage of used swap space.
+kbswpcad;Memory_Utilization;Amount of cached swap memory in kilobytes. This is memory that once was swapped out, is swapped back in but still also is in the swap area (if memory is needed it doesn't need to be swapped out again because it is already in the swap area. This saves I/O).
+frmpg/s;Memory_Paging;Number of memory pages freed by the system per second. A negative value represents a number of pages allocated by the system. Note that a page has a size of 4 kB or 8 kB according to the machine architecture.
+bufpg/s;Memory_Paging;Number of additional memory pages used as buffers by the system per second. A negative value means fewer pages used as buffers by the system.
+campg/s;Memory_Paging;Number of additional memory pages cached by the system per second. A negative value means fewer pages in the cache.
+rxpck/s;EthernetInterfaces;Total number of packets received per second.
+txpck/s;EthernetInterfaces;Total number of packets transmitted per second.
+rxbyt/s;EthernetInterfaces;Total number of kilobytes received per second.
+txbyt/s;EthernetInterfaces;Total number of bytes transmitted per second.
+rxcmp/s;EthernetInterfaces;Number of compressed packets received per second (for cslip etc.).
+txcmp/s;EthernetInterfaces;Number of compressed packets transmitted per second.
+rxmcst/s;EthernetInterfaces;Number of multicast packets received per second.
+pgpgin/s;Disk_Paging;Total number of kilobytes the system paged in from disk per second. Note: With old kernels (2.2.x) this value is a number of blocks per second (and not kilobytes).
+pgpgout/s;Disk_Paging;Total number of kilobytes the system paged out to disk per second. Note: With old kernels (2.2.x) this value is a number of blocks per second (and not kilobytes).
+fault/s;Disk_Paging;Number of page faults (major + minor) made by the system per second. This is not a count of page faults that generate I/O, because some page faults can be resolved without I/O.
+majflt/s;Disk_Paging;Number of major faults the system has made per second, those which have required loading a memory page from disk.
+tps;Disk_IO;Total number of transfers per second that were issued to physical devices. A transfer is an I/O request to a physical device. Multiple logical requests can be combined into a single I/O request to the device. A transfer is of indeterminate size.
+rtps;Disk_IO;Total number of read requests per second issued to physical devices.
+wtps;Disk_IO;Total number of write requests per second issued to physical devices.
+bread/s;Disk_IO;Total amount of data read from the devices in blocks per second. Blocks are equivalent to sectors with 2.4 kernels and newer and therefore have a size of 512 bytes. With older kernels, a block is of indeterminate size.
+bwrtn/s;Disk_IO;Total amount of data written to devices in blocks per second.
+%user;CPU_All;Percentage of CPU utilization that occurred while executing at the user level (application). Note that this field includes time spent running virtual processors
+%nice;CPU_All;Percentage of CPU utilization that occurred while executing at the user level with nice priority.
+%system;CPU_All;Percentage of CPU utilization that occurred while executing at the system level (kernel). Note that this field includes time spent servicing hardware and software interrupts.
+%iowait;CPU_All;Percentage of time that the CPU or CPUs were idle during which the system had an outstanding disk I/O request.
+%idle;CPU_All;Percentage of time that the CPU or CPUs were idle and the system did not have an outstanding disk I/O request.
+mbmemfree;Memory_Utilization;Amount of free memory available in megabytes.
+mbmemused;Memory_Utilization;Amount of used memory in megabytes. This does not take into account memory used by the kernel itself.
+utilization(%)_memused;Memory_Utilization;Percentage of used memory.
+mbbuffers;Memory_Utilization;Amount of memory used as buffers by the kernel in megabytes.
+mbcached;Memory_Utilization;Amount of memory used to cache data by the kernel in megabytes.
+mbswpfree;Memory_Utilization;Amount of free swap space in megabytes.
+mbswpused;Memory_Utilization;Amount of used swap space in megabytes.
+utilization(%)_swpused;Memory_Utilization;Percentage of used swap space.
+mbswpcad;Memory_Utilization;Amount of cached swap memory in megabytes. This is memory that once was swapped out, is swapped back in but still also is in the swap area (if memory is needed it doesn't need to be swapped out again because it is already in the swap area. This saves I/O).
+frmpg_per_second;Memory_Paging;Number of memory pages freed by the system per second. A negative value represents a number of pages allocated by the system. Note that a page has a size of 4 kB or 8 kB according to the machine architecture.
+bufpg_per_second;Memory_Paging;Number of additional memory pages used as buffers by the system per second. A negative value means fewer pages used as buffers by the system.
+campg_per_second;Memory_Paging;Number of additional memory pages cached by the system per second. A negative value means fewer pages in the cache.
+rxpck_per_second;EthernetInterfaces;Total number of packets received per second.
+txpck_per_second;EthernetInterfaces;Total number of packets transmitted per second.
+rxKB_per_second;EthernetInterfaces;Total number of kilobytes received per second.
+rxkB_per_second;EthernetInterfaces;Total number of kilobytes received per second.
+txKB_per_second;EthernetInterfaces;Total number of kilobytes transmitted per second.
+txkB_per_second;EthernetInterfaces;Total number of kilobytes transmitted per second.
+rxcmp_per_second;EthernetInterfaces;Number of compressed packets received per second (for cslip etc.).
+txcmp_per_second;EthernetInterfaces;Number of compressed packets transmitted per second.
+rxmcst_per_second;EthernetInterfaces;Number of multicast packets received per second.
+pgpgin_per_second;Disk_Paging;Total number of kilobytes the system paged in from disk per second. Note: With old kernels (2.2.x) this value is a number of blocks per second (and not kilobytes).
+pgpgout_per_second;Disk_Paging;Total number of kilobytes the system paged out to disk per second. Note: With old kernels (2.2.x) this value is a number of blocks per second (and not kilobytes).
+fault_per_second;Disk_Paging;Number of page faults (major + minor) made by the system per second. This is not a count of page faults that generate I/O, because some page faults can be resolved without I/O.
+majflt_per_second;Disk_Paging;Number of major faults the system has made per second, those which have required loading a memory page from disk.
+tps;Disk_IO;Total number of transfers per second that were issued to physical devices. A transfer is an I/O request to a physical device. Multiple logical requests can be combined into a single I/O request to the device. A transfer is of indeterminate size.
+rtps;Disk_IO;Total number of read requests per second issued to physical devices.
+wtps;Disk_IO;Total number of write requests per second issued to physical devices.
+bread_per_second;Disk_IO;Total amount of data read from the devices in blocks per second. Blocks are equivalent to sectors with 2.4 kernels and newer and therefore have a size of 512 bytes. With older kernels, a block is of indeterminate size.
+bwrtn_per_second;Disk_IO;Total amount of data written to devices in blocks per second.
+utilization(%)_user;CPU_All;Percentage of CPU utilization that occurred while executing at the user level (application). Note that this field includes time spent running virtual processors
+utilization(%)_nice;CPU_All;Percentage of CPU utilization that occurred while executing at the user level with nice priority.
+utilization(%)_system;CPU_All;Percentage of CPU utilization that occurred while executing at the system level (kernel). Note that this field includes time spent servicing hardware and software interrupts.
+utilization(%)_iowait;CPU_All;Percentage of time that the CPU or CPUs were idle during which the system had an outstanding disk I/O request.
+utilization(%)_idle;CPU_All;Percentage of time that the CPU or CPUs were idle and the system did not have an outstanding disk I/O request.
+utilization(%)_steal;CPU_All;Show the percentage of time spent in involuntary wait by the virtual CPU or CPUs while the hypervisor was servicing another virtual processor.
+DEV_tps;Device_Activity;Number of transfers per second that were issued to the device. Multiple logical requests can be combined into a single I/O request to the device. A transfer is of indeterminate size.
+DEV_rd_sec_per_second;Device_Activity;Number of sectors read from the device. The size of a sector is 512 bytes.
+DEV_wr_sec_per_second;Device_Activity;Number of sectors written to the device. The size of a sector is 512 bytes.
+DEV_avgrq-sz;Device_Activity;Average size (in sectors) of the requests that were issued to the device.
+DEV_avgqu-sz;Device_Activity;Average queue length of the requests that were issued to the device.
+DEV_await;Device_Activity;Average time (in milliseconds) for I/O requests issued to the device to be served. This includes the time spent by the requests in queue and the time spent servicing them.
+DEV_svctm;Device_Activity;The average service time (in milliseconds) for I/O requests that were issued to the device.
+DEV_utilization(%)_util;Device_Activity;Percentage of CPU time during which I/O requests were issued to the device (bandwidth utilization for the device). Device saturation occurs when this value is close to 100%.
+PhysicalmemoryMBytesUsed;Memory_Utilization; Total = Used - (shared + buffers + cached)
+Priority;Process;The priority of the task.
+Nice_Value;Process;The nice value of the task. A negative nice value means higher priority, whereas a positive nice value means lower priority. Zero in this field simply means priority will not be adjusted in determining a tasks dispatchability.
+Virtual_Image_mb;Process;The total amount of virtual memory used by the task. It includes all code, data and shared libraries (VIRT = SWAP + RES).
+Resident_Size_mb;Process;The non-swapped physical memory a task has used. (RES= CODE + DATA).
+Shared_Mem_Size_mb;Process;The amount of shared memory used by a task. It simply reflects memory that could be potentially shared with other processes. 
+CPU_Usage;Process;The tasks share of the elapsed CPU time since the last screen update, expressed as a percentage of total CPU time. 
+Memory_Usage;Process;A tasks currently used share of available physical memory.
+CPU_Time;Process;CPU Time, hundredths - The same as time, but reflecting more granularity through hundredths of a second.
+cswch/s;Context_Switches;Total number of context switches per second.
+cswch_per_second;Context_Switches;Total number of context switches per second.

@@ -1,0 +1,10 @@
+\MSSQL$SQLHOSTNAME:Access Methods\*
+\MSSQL$SQLHOSTNAME:Buffer Manager\*
+\MSSQL$SQLHOSTNAME:Buffer Partition(*)\*
+\MSSQL$SQLHOSTNAME:Databases(*)\*
+\MSSQL$SQLHOSTNAME:General Statistics\*
+\MSSQL$SQLHOSTNAME:Latches\*
+\MSSQL$SQLHOSTNAME:Locks(*)\*
+\MSSQL$SQLHOSTNAME:Memory Manager\*
+\MSSQL$SQLHOSTNAME:SQL Statistics\*
+\MSSQL$SQLHOSTNAME:Wait Statistics(*)\*

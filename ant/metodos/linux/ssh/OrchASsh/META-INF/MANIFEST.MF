@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.2
+Created-By: 1.7.0_71-b14 (Oracle Corporation)
+Main-Class: br.com.primeup.java.ssh.ExecuteShell
+Class-Path:  . 
+

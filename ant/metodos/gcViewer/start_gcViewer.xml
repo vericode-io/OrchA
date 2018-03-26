@@ -1,0 +1,10 @@
+<project name="start.gcViewer" default="start.gcViewer" basedir=".">
+
+	<target name="start.gcViewer">
+	
+		<exec executable="${basedir}\metodos\gcViewer\ParserGC\runGcViewer.bat">
+		</exec>
+	
+	</target>
+	
+</project>

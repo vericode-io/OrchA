@@ -1,0 +1,1 @@
+..\tools\PSEXEC_Tools\PsExec.exe -w %1 -h \\%2  cmd /c START /B %3 

@@ -1,0 +1,13 @@
+<project name="copy.file" default="copy.file" basedir=".">
+
+	<target name="copy.file">
+	
+		<mkdir dir="${var3}"/>
+		
+		<copy file="${var4}" todir="${var3}"/>
+		
+		<mkdir dir="${var3}"/>
+
+	</target>
+	
+</project>

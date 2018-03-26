@@ -1,0 +1,1 @@
+logman -s %1 create counter %2 -f csv -si 1 -cf %3 -o %4

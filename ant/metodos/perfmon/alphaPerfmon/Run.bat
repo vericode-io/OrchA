@@ -1,0 +1,1 @@
+"..\tools\R-Portable\App\R-Portable\bin\i386\R.exe" --no-environ --no-save < ".\metodos\perfmon\alphaPerfmon\alphaPerfmonReportPDF.R" > "log.r" 

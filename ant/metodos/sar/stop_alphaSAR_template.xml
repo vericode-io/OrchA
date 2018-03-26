@@ -1,0 +1,36 @@
+<project name="stop.alphaSAR.template" default="stop.alphaSAR.template" basedir=".">
+
+	<target name="stop.alphaSAR.template">
+	
+		<tstamp>
+			<format property="timenow" pattern="hh:mm:ss a"/>
+		</tstamp>
+	
+		<propertyfile file="${basedir}\metodos\sar\alphaSAR\Config_SAR.cfg">
+			<entry  key="ProjectName" value="${var3}"/>
+			<entry  key="Queue_LoadAverage" value="Queue_LoadAverage.csv"/>
+			<entry  key="Memory_Utilization" value="Memory_Utilization.csv"/>
+			<entry  key="Memory_Paging" value="Memory_Paging.csv"/>
+			<entry  key="EthernetInterfaces" value="EthernetInterfaces.csv"/>
+			<entry  key="Disk_Paging" value="Disk_Paging.csv"/>
+			<entry  key="Disk_IO" value="Disk_IO.csv"/>
+			<entry  key="CPU_Units" value="CPU_Units.csv"/>
+			<entry  key="CPU_All" value="CPU_All.csv"/>
+			<entry  key="Device_Activity" value="Device_Activity.csv"/>
+			<entry  key="Context_Switches" value="Context_Switches.csv"/>
+			<entry  key="sampleGroup" value="${var4}"/>
+			<entry  key="description" value="description.info"/>
+			<entry  key="inventario" value="Inventario.txt"/>	
+			<entry  key="PhysicalmemoryBytesUsed" value="PhysicalmemoryBytesUsed.csv"/>	
+			<entry  key="PlotTestHour" value="${var5}"/>
+			<entry  key="hourEnd" value="${timenow}"/>			
+			
+		</propertyfile>
+		
+		<replace file="${basedir}\metodos\sar\alphaSAR\Config_SAR.cfg">
+			<replacefilter token="\:" value=":"/>
+		</replace>		
+	
+	</target>
+	
+</project>
