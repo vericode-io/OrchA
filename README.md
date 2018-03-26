@@ -16,26 +16,26 @@ It was idealized on the Prime Up Labs to mainly be used on automations of qualit
 
 ###### Folder structure:
 
-ant
-    +---jobs
-    +---orquestrador_ant_v.XX.xml
-    +---metodos
-    +---output
-tools
-    +---ant (the apache ant goes here)
-    +---jdkXX
+- ant
+    - - jobs
+    - - orquestrador_ant_v.XX.xml
+    - - metodos
+    - - output
+- tools
+   - - ant (the apache ant goes here)
+   - - jdkXX
 
 
 
 The tools directory is destined to put any tools needed on the automation process, such as:
-    +---PSEXEC_Tools (The sysinternals applications)
-    +---R-Portable (GNU-R)
-    +---7za.exe
-    +---baregrep.exe
-    +---baretail.exe
-    +---putty.exe
-    +---jmeter
-	+---cygwin
+    - PSEXEC_Tools (The sysinternals applications)
+    - R-Portable (GNU-R)
+    - 7za.exe
+    - baregrep.exe
+    - baretail.exe
+    - putty.exe
+    - jmeter
+    - cygwin
 
 
 All the configurations / commands / scripts (linux, sql, windows, etc...) should be in a subdirectory of the job directory (preferentialy one directory per project).
