@@ -28,6 +28,7 @@ It was idealized on the Prime Up Labs to mainly be used on automations of qualit
 
 
 The tools directory is destined to put any tools needed on the automation process, such as:
+
     - PSEXEC_Tools (The sysinternals applications)
     - R-Portable (GNU-R)
     - 7za.exe
